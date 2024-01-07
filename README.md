@@ -1,6 +1,4 @@
-Hello! i'm Nexoniarz, and i'm 13 years old
-
-i'm from poland
+Hello! i'm Nexoniarz, i'm from poland, and i'm 13 years old
 
 Languages: English, Polish, German, Japanese.
 
