@@ -1,6 +1,6 @@
 Hello! i'm Nexoniarz, i'm from poland, and i'm 13 years old
 
-Languages: English, Polish, German, Japanese.
+Languages: English, Polish, German, Japanese, Spain, Russian
 
 [![Programming Lang.](https://skillicons.dev/icons?i=html,css,java)](https://skillicons.dev)
 
