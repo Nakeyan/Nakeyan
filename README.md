@@ -1,4 +1,4 @@
-Hello! i'm ネオナイツ(Neonaitsu), i'm from poland, and i'm 13 years old
+Hello! i'm ネオナイツ(Neonaitsu), i'm from poland, and i'm a 13 years old programist and Artist
 
 Languages that i know and learns: English, Polish, German, Japanese, Spain, Russian
 
