@@ -1,4 +1,4 @@
-Hello! i'm Nexoniarz, i'm from poland, and i'm 13 years old
+Hello! i'm ネオナイツ(Neonaitsu), i'm from poland, and i'm 13 years old
 
 Languages that i know and learns: English, Polish, German, Japanese, Spain, Russian
 
