@@ -1,4 +1,4 @@
-Hello! i'm ネオナイツ(Neonaitsu), i'm from poland, and i'm a 13 years old programist and Artist
+Hello! i'm ネオナイツ(Neonaitsu) Gay, i'm from poland, and i'm a 13 years old programmer and Graphic designer
 
 Languages that i know  (or) learns: English, Polish, German, Japanese, Russian, korean, Finnish 
 
