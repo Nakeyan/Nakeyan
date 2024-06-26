@@ -1,6 +1,6 @@
 Hello! i'm ネオナイツ(Neonaitsu), i'm from poland, and i'm a 13 years old programist and Artist
 
-Languages that i know and learns: English, Polish, German, Japanese, Russian, korean
+Languages that i know  (or) learns: English, Polish, German, Japanese, Russian, korean, Finnish 
 
 [![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,python,windows,linux)](https://skillicons.dev)
 
