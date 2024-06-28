@@ -91,6 +91,31 @@ img {
     border-radius: 50%;
 }
 
+    .header {
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    .header a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .header a:hover {
+        text-decoration: underline;
+    }
+    
+    .container {
+        padding-top: 60px;
+    }
 
 @media only screen and (max-width: 600px) {
     body {
@@ -124,6 +149,8 @@ img {
         margin: 0 auto 10px;
     }
 }
+
+
 
 /* Part of script from MORSZ site(https://morsznetik.github.io/) */
 
