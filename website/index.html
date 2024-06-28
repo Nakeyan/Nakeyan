@@ -53,20 +53,5 @@
             <div><li class="rainbow-text">Happy Pride Month!</li></div>
         </div>
     </div>
-    <script>
-      async function fetchVisitorCount() {
-        try {
-          const response = await fetch('https://api.apivisitorcounter.com/count?apiKey=G-8XTF4BHLGY');
-          const data = await response.json();
-          document.getElementById('visitor-count').innerText = `Current visitors: ${data.count}`;
-        } catch (error) {
-          console.error('Error fetching visitor count:', error);
-          document.getElementById('visitor-count').innerText = 'Unable to load visitor count';
-        }
-      }
-      
-      fetchVisitorCount();
-      setInterval(fetchVisitorCount, 60000); 
-    </script>
 </body>
 </html>
