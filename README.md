@@ -2,7 +2,7 @@ Hello! i'm ナケヤン-君(Nakeyan-Kun) Gay, i'm from poland, and i'm a 13 year
 
 Languages that i know  (or) learns: English, Polish, German, Japanese, Russian, korean, Finnish 
 
-[![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,python,windows,linux)](https://skillicons.dev)
+[![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,python,linux,fedora)](https://skillicons.dev)
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Nexoniarz)](https://github.com/anuraghazra/github-readme-stats)
 
