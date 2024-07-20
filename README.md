@@ -1,6 +1,6 @@
 Hello! i'm ナケヤン-君(Nakeyan-Kun) Gay, i'm from poland, and i'm a 14 years old programmer and Graphic designer
 
-Languages that i know  (or) learns: English, Polish, German, Japanese, Russian, korean, Finnish 
+Languages that i know  (or) learns: English, Polish, German, Japanese, Russian, Finnish 
 
 [![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,python,linux,fedora)](https://skillicons.dev)
 
