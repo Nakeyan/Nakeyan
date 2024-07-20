@@ -1,4 +1,4 @@
-Hello! i'm ナケヤン-君(Nakeyan-Kun) Gay, i'm from poland, and i'm a 13 years old programmer and Graphic designer
+Hello! i'm ナケヤン-君(Nakeyan-Kun) Gay, i'm from poland, and i'm a 14 years old programmer and Graphic designer
 
 Languages that i know  (or) learns: English, Polish, German, Japanese, Russian, korean, Finnish 
 
