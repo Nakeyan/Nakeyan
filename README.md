@@ -12,6 +12,8 @@ for web browsers without https support:
 
 link: http://nakeyan.xyz/website/
 
+-------
+
 [![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,python,linux,fedora)](https://skillicons.dev)
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Nakeyan)](https://github.com/anuraghazra/github-readme-stats)
