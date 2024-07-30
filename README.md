@@ -2,10 +2,14 @@ Hello! i'm ナケヤン-君(Nakeyan-Kun) Gay, i'm from poland, and i'm a 14 year
 
 Languages that i know  (or) learns: English, Polish, German, Japanese, Russian
 
+-------
+
 Do you wanna see website? 
+
 link: https://nakeyan.xyz/website/
 
 for web browsers without https support:
+
 link: http://nakeyan.xyz/website/
 
 [![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,python,linux,fedora)](https://skillicons.dev)
