@@ -1,16 +1,23 @@
-Hello! i'm ナケヤン-君(Nakeyan-Kun) Gay, i'm from poland, and i'm a 14 years old programmer and Graphic designer
+# Hi! i'm ナケヤン-君
+I'm Nakeyan, I'm an 14 yr old polish programmer that lives in lesser poland at Olkusz
 
-Languages that i know  (or) learns: English, Polish, German, Japanese, Russian
+# Programming Languages
+HTML
+CSS
+some Python
+
+
+# Languages that i speak
+Polish(C2+)
+English(A2/B1)
+Japanese(A1) (Learning)
 
 -------
 
-Do you wanna see website? 
+Do you wanna see my website? 
+See it here!
+https://nakeyan.xyz/website/
 
-link: https://nakeyan.xyz/website/
-
-for web browsers without https support:
-
-link: http://nakeyan.xyz/website/
 
 -------
 
