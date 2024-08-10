@@ -21,7 +21,7 @@ Japanese(A1) (Learning)
 
 Do you wanna see my website? 
 
-See it here!
+See it here! (site is not avaible for now. because i upgrade it)
 
 https://nakeyan.xyz/website/
 
