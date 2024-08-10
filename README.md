@@ -1,5 +1,5 @@
 # Hi! i'm ナケヤン-君
-I'm Nakeyan, I'm an 14 yr old, programmer that lives in lesser poland at Olkusz
+I'm a 14-year-old programmer living in Lesser Poland, Olkusz. I have a passion for gaming, Linux, and programming. Currently, I'm using Arch Linux as my main operating system, which is very comfortable to use for me. :D
 
 # Programming Languages
 HTML
