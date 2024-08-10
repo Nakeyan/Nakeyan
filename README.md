@@ -3,19 +3,26 @@ I'm Nakeyan, I'm an 14 yr old polish programmer that lives in lesser poland at O
 
 # Programming Languages
 HTML
+
 CSS
-some Python
+
+and some Python
 
 
 # Languages that i speak
+
 Polish(C2+)
+
 English(A2/B1)
+
 Japanese(A1) (Learning)
 
 -------
 
 Do you wanna see my website? 
+
 See it here!
+
 https://nakeyan.xyz/website/
 
 
