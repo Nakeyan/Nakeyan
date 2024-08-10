@@ -1,5 +1,5 @@
 # Hi! i'm ナケヤン-君
-I'm Nakeyan, I'm an 14 yr old polish programmer that lives in lesser poland at Olkusz
+I'm Nakeyan, I'm an 14 yr old, programmer that lives in lesser poland at Olkusz
 
 # Programming Languages
 HTML
