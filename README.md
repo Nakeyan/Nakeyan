@@ -1,5 +1,5 @@
 # Hi! i'm ナケヤン-君
-I'm a 14-year-old programmer living in Lesser Poland, Olkusz. I have a passion for gaming, Linux, and programming. Currently, I'm using Arch Linux as my main operating system, which is very comfortable to use for me. :D
+I'm a 14-year-old programmer living in Lesser Poland, Olkusz. I have a passion for gaming, Linux, and programming. Currently, I'm using Fedora as my second OS, and windows 11(debloated) as my main operating system, which is very comfortable to use for me. :D
 
 # Programming Languages
 HTML
