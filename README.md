@@ -1,12 +1,10 @@
 # Hi! i'm ナケヤン-君
-I'm a 14-year-old programmer living in Lesser Poland, Olkusz. I have a passion for gaming, Linux, and programming. Currently, I'm using Fedora as my second OS, and windows 11(debloated) as my main operating system, which is very comfortable to use for me. :D
+I'm a Polish gay, I've been programming for about 2/3 years now. I started with HTML and later CSS, and right now I'm learning C++. I also like to play video games.
 
 # Programming Languages
 HTML
-
 CSS
-
-and some Python
+C++ (LEARNING)
 
 
 # Languages that i speak
@@ -14,6 +12,8 @@ and some Python
 Polish(C2+)
 
 English(A2/B1)
+
+German(A1/A2) (Learning) 
 
 Japanese(A1) (Learning)
 
