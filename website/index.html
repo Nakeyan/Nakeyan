@@ -6,13 +6,12 @@
     <title>Nakeyan</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-
         * {
             transition: all 0.3s ease;
         }
 
         body {
-            background: linear-gradient(135deg, rgba(30,30,47,0.8) 0%, rgba(45,45,68,0.8) 100%), url('./root/img/background.jpg');
+            background: linear-gradient(135deg, rgba(30,30,47,0.85) 0%, rgba(45,45,68,0.85) 100%), url('./root/img/background.jpg');
             background-size: cover;
             background-blend-mode: overlay;
             color: #f0f0f5;
@@ -22,78 +21,100 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
 
-
         .menu {
+            position: fixed;
+            top: 50px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
             background-color: rgba(18, 18, 35, 0.9);
-            padding: 15px 0;
-            text-align: center;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .menu a {
             color: #fff;
-            margin: 0 20px;
+            margin: 10px 0;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             transition: color 0.3s ease;
+            text-align: left;
         }
 
         .menu a.active, .menu a:hover {
             color: #FF69B4;
         }
 
-
-
         .tab-content {
             display: none;
-            padding: 30px;
-            width: 500px;
+            padding: 40px;
+            width: 600px;
             max-width: 90%;
             background: rgba(28, 28, 43, 0.9);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-            animation: fadeIn 1s ease-out;
+            animation: fadeIn 0.8s ease-out;
+            margin-top: 20px;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
+
+        .tab-content:hover {
+            transform: scale(1.02);
+            background: rgba(28, 28, 55, 0.95);
+        }
+        
 
         .tab-content.active {
             display: block;
         }
 
-
         .profile {
-            position: absolute;
-            top: -30px;
-            right: 30px;
-            width: 100px;
-            height: 100px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 3px solid #FF69B4; /* Pink border */
-            box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.5); /* Pink glow */
+            border: 3px solid #FF69B4;
+            box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.5);
             transition: transform 0.5s ease;
+            margin-bottom: 20px;
         }
 
         .profile:hover {
             transform: scale(1.1) rotate(5deg);
         }
 
-
         h1 {
-            font-size: 2em;
+            font-size: 2.2em;
             color: #FF69B4;
+            margin-bottom: 10px;
+            animation: popIn 1.2s ease;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 60%;
+            height: 3px;
+            background-color: #FF69B4;
+            border-radius: 3px;
+            opacity: 0.7;
+            transition: width 0.3s ease;
+        }
+
+        h1:hover::after {
+            width: 80%; 
         }
 
         p {
             font-size: 1.1em;
             margin-top: 20px;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #d9d9e3;
         }
 
@@ -122,11 +143,21 @@
             color: #FF69B4;
         }
 
+        .separator {
+            border-top: 1px dashed #FF69B4;
+            margin: 20px 0;
+        }
+
+        .scroll-section {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -134,6 +165,16 @@
             }
         }
 
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
         footer {
             text-align: center;
@@ -141,9 +182,9 @@
             padding: 10px;
             background-color: rgba(18, 18, 35, 0.9);
             color: #aaa;
-            position: absolute;
-            bottom: 0;
+            position: relative;
             width: 100%;
+            font-size: 0.9em;
         }
 
         .birthday {
@@ -159,72 +200,99 @@
     <div class="menu">
         <a href="#home" class="tab-link active" onclick="openTab('home')">Home</a>
         <a href="#about" class="tab-link" onclick="openTab('about')">About</a>
+        <a href="#ssff" class="tab-link" onclick="openTab('ssff')">Other</a>
         <a href="https://github.com/Nakeyan" target="_blank">GitHub</a>
     </div>
-
 
     <div id="home" class="tab-content active">
         <img class="profile" src="./root/img/pfp.jpg" alt="Profile picture">
         <h1>Hi, I'm Nakeyan</h1>
         <p>14-year-old (gay :3) programmer from Lesser Poland.<br> Gaming, Linux, and coding life.</p>
-        <p>Discord: <a  target="_blank" class="highlight">nakeyan_official</a></p>
-        <p>DC Minecraft: <a  target="_blank" href="" class="highlight">My Minecraft server (coming soon..)</a></p>
+        <p>Discord: <a target="_blank" class="highlight">nakeyan_official</a></p>
+        <p class="birthday">Next birthday in <span id="birthday-countdown"></span> days</p>
+    </div>
+
+    <div id="ssff" class="tab-content">
+        <h1>Other</h1>
+        <ul>
+        <div class="separator"></div>
+        <img src="root/img/MDOIDM.jpg"></img>
+        <li><strong><p>Description:   tak było nie zmyślam</p></strong></li>
+        <li><strong><p>Added:   2024 November 11 at 18:30</p></strong></li>
+        <div class="separator"></div>
+        </ul>
     </div>
 
     <div id="about" class="tab-content">
-        <h2>About Me</h2>
-        <p>
-            Hi, I'm Nakeyan! and i'm a polish gay, i code i've been programming for about 2/3yrs now, i started with html and later CSS, and right now i'm learning Rust. Also i've been using linux for 3 months now. i also like to play games<br>
+        <h1>About Me</h1>
+        <div class="scroll-section">
+            <p>Hi, I'm Nakeyan! I'm a Polish gay, I've been programming for about 2/3 years now. I started with HTML and later CSS, and right now I'm learning C++. I also like to play video games.</p>
 
-        </p>
+            <div class="separator"></div>
 
-        <h3>Languages I Speak:</h3>
-        <ul>
-            <li><strong>Polish</strong> (Native)</li>
-            <li><strong>English</strong></li>
-            <li><strong>German</strong> (learning)</li>
-            <li><strong>Japanese</strong> (learning)</li>
-        </ul>
+            <h3>Languages I Speak:</h3>
+            <ul>
+                <li><strong>Polish</strong> (Native)</li>
+                <li><strong>English</strong></li>
+                <li><strong>German</strong> (learning)</li>
+                <li><strong>Japanese</strong> (learning)</li>
+            </ul>
 
-        <h3>Coding Skills:</h3>
-        <ul>
-            <li><strong>HTML</strong></li>
-            <li><strong>CSS</strong></li>
-        </ul>
-        <h3>Type racer:</h3>
-        <a href"https://data.typeracer.com/pit/profile?user=nakeyan" ></a>
+            <div class="separator"></div>
+
+            <h3>Coding Skills:</h3>
+            <ul>
+                <li><strong>HTML</strong></li>
+                <li><strong>CSS</strong></li>
+                <li><strong>C++</strong> (learning)</li>
+            </ul>
+
+            <div class="separator"></div>
+
+            <h3>Type Racer:</h3>
+            <a href="https://data.typeracer.com/pit/profile?user=nakeyan&ref=badge" target="_top">
+                <img src="https://data.typeracer.com/misc/badge?user=nakeyan" border="0" alt="TypeRacer.com scorecard for user nakeyan"/>
+            </a>
+            <p><strong><a href="https://data.typeracer.com/pit/profile?user=nakeyan">TypeRacer Profile</a></strong></p>
+        </div>
     </div>
 
     <script>
-        function getDaysUntilNextBirthday(birthDate) {
+        function getDaysUntilNextBirthday(birthDateString) {
             const today = new Date();
+            const birthDate = new Date(birthDateString);
             const currentYear = today.getFullYear();
-            let nextBirthday = new Date(birthDate);
-            nextBirthday.setFullYear(currentYear);
-
-            if (today > nextBirthday) {
-                nextBirthday.setFullYear(currentYear + 1);
+            birthDate.setFullYear(currentYear);
+            
+            if (today > birthDate) {
+                birthDate.setFullYear(currentYear + 1);
             }
-
-            const timeDiff = nextBirthday - today;
+            
+            const timeDiff = birthDate - today;
             const daysUntil = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
             return daysUntil;
         }
 
+        function updateBirthdayCountdown() {
+            const days = getDaysUntilNextBirthday("2010-07-12");
+            document.getElementById("birthday-countdown").innerText = days;
+        }
+
         function openTab(tabName) {
-            var i, tabContent, tabLinks;
-            tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
+            const tabContent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContent.length; i++) {
                 tabContent[i].classList.remove("active");
             }
             document.getElementById(tabName).classList.add("active");
 
-            tabLinks = document.getElementsByClassName("tab-link");
-            for (i = 0; i < tabLinks.length; i++) {
+            const tabLinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tabLinks.length; i++) {
                 tabLinks[i].classList.remove("active");
             }
             event.currentTarget.classList.add("active");
         }
+
+        updateBirthdayCountdown();
     </script>
 
 </body>
