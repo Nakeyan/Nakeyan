@@ -46,8 +46,20 @@
         }
 
         .menu a.active, .menu a:hover {
-            color: #FF69B4;
+            color: #AD69FF;
         }
+        
+      .hamburger {
+            display: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #fff;
+            z-index: 1001;
+        }
+
 
         .tab-content {
             display: none;
@@ -76,7 +88,7 @@
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            border: 3px solid #FF69B4;
+            border: 3px solid #AD69FF;
             box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.5);
             transition: transform 0.5s ease;
             margin-bottom: 20px;
@@ -88,7 +100,7 @@
 
         h1 {
             font-size: 2.2em;
-            color: #FF69B4;
+            color: #AD69FF;
             margin-bottom: 10px;
             animation: popIn 1.2s ease;
             position: relative;
@@ -101,7 +113,7 @@
             bottom: -5px;
             width: 60%;
             height: 3px;
-            background-color: #FF69B4;
+            background-color: #AD69FF;
             border-radius: 3px;
             opacity: 0.7;
             transition: width 0.3s ease;
@@ -119,7 +131,7 @@
         }
 
         .highlight {
-            color: #FF69B4;
+            color: #AD69FF;
         }
 
         h2, h3 {
@@ -140,11 +152,24 @@
         }
 
         ul li strong {
-            color: #FF69B4;
+            color: #AD69FF;
         }
 
+        a {
+            color: #AD69FF;
+        }
+
+        a:hover {
+            color: #AD69FF;
+        }
+
+        a:active {
+            color: #AD69FF;
+        }
+
+
         .separator {
-            border-top: 1px dashed #FF69B4;
+            border-top: 2.5px dashed #AD69FF;
             margin: 20px 0;
         }
 
@@ -193,15 +218,78 @@
             color: #d9d9e3;
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .social-links a img:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+          .menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            background-color: rgba(18, 18, 35, 0.95);
+            padding-top: 60px;
+            align-items: center;
+            z-index: 1000;
+        }     
+
+        .menu.active {
+            display: flex;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .social-links a img:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body>
 
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="menu">
         <center><a href="#home" class="tab-link active" onclick="openTab('home')">Home</a></center>
         <center><a href="#about" class="tab-link" onclick="openTab('about')">About</a></center>
         <center><a href="#ssff" class="tab-link" onclick="openTab('ssff')">Other</a></center>
-        <center><a href="https://github.com/Nakeyan" target="_blank">GitHub</a></center>
     </div>
 
     <div id="home" class="tab-content active">
@@ -210,18 +298,17 @@
         <p>14-year-old (gay :3) programmer from Lesser Poland.<br> Gaming, Linux, and coding life.</p>
         <p>Discord: <a target="_blank" class="highlight">nakeyan_official</a></p>
         <p class="birthday">Next birthday in <span id="birthday-countdown"></span> days</p>
-        <center><a>Site by nakeyan made in HTML, CSS and JavaScript</a></center>
+        <center><p>Site by nakeyan made in HTML, CSS and JavaScript</a></center>
     </div>
 
     <div id="ssff" class="tab-content"> 
         <h1>Other</h1>
+        <div class="scroll-section">
         <ul>
-        <div class="separator"></div>
-        <img height="172" width="268" src="https://cdn.discordapp.com/attachments/1299746745697435703/1307378684315045949/pc1211.png?ex=673a16c8&is=6738c548&hm=cdef82f63b4f6e88ade42f20f22b8ef27bc6b0f580c726b71d773a9b7a6f90bb&"></img>
-        <a href="https://cdn.discordapp.com/attachments/1299746745697435703/1307378684315045949/pc1211.png?ex=673a16c8&is=6738c548&hm=cdef82f63b4f6e88ade42f20f22b8ef27bc6b0f580c726b71d773a9b7a6f90bb&">Full screenshot</a>
+        <img height="172" width="268" src="https://cdn.discordapp.com/attachments/1299746745697435703/1307378684315045949/pc1211.png?ex=673b6848&is=673a16c8&hm=505c49636bb8b57811cca132f538b3736f0380a129c557c222d6157892a67f51&"></img>
+        <a href="https://cdn.discordapp.com/attachments/1299746745697435703/1307378684315045949/pc1211.png?ex=673b6848&is=673a16c8&hm=505c49636bb8b57811cca132f538b3736f0380a129c557c222d6157892a67f51&">Full screenshot</a>
         <li><strong><p>Description:   Screenshot of my desktop bc. why not, i'm bored</p></strong></li>
         <li><strong><p>Added:   2024 November 15 at 17:18</p></strong></li>
-        <div class="separator"></div>
         </ul>
         <ul>
         <div class="separator"></div>
@@ -230,6 +317,7 @@
         <li><strong><p>Added:   2024 November 11 at 18:30</p></strong></li>
         <div class="separator"></div>
         </ul>
+        </div>
     </div>
 
     <div id="about" class="tab-content">
@@ -265,6 +353,19 @@
             <p><strong><a href="https://data.typeracer.com/pit/profile?user=nakeyan">TypeRacer Profile</a></strong></p>
         </div>
     </div>
+
+    <div class="social-links">
+        <a href="https://github.com/Nakeyan" target="_blank">
+            <img src="root/img/github-icon.svg" alt="GitHub">
+        </a>
+        <a href="https://discord.gg/CgEjUEnRYN" target="_blank">
+            <img src="root/img/discord-icon.svg" alt="Discord">
+        </a>
+        <a href="https://steamcommunity.com/id/nakeyan-kun" target="_blank">
+            <img src="root/img/steam-icon.svg" alt="Steam">
+        </a>
+    </div>
+
 
     <script>
         function getDaysUntilNextBirthday(birthDateString) {
@@ -302,6 +403,12 @@
         }
 
         updateBirthdayCountdown();
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
     </script>
 
 </body>
