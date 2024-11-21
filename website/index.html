@@ -414,6 +414,36 @@
             menu.classList.toggle('active');
         }
 
+    //  ↑ ↑ ↓ ↓ ← → ← → B A
+    const konamiCode = [
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowLeft",
+        "ArrowRight",
+        "b",
+        "a"
+    ];
+
+    let konamiIndex = 0;
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === konamiCode[konamiIndex]) {
+            konamiIndex++;
+            if (konamiIndex === konamiCode.length) {
+                konamiIndex = 0;
+
+                alert("bro");
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            }
+        } else {
+            konamiIndex = 0;
+        }
+    });
+
     </script>
 
 </body>
