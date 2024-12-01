@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nakeyan</title>
@@ -48,7 +47,7 @@
         .menu a.active, .menu a:hover {
             color: #AD69FF;
         }
-        
+
       .hamburger {
             display: none;
             cursor: pointer;
@@ -78,7 +77,7 @@
             transform: scale(1.02);
             background: rgba(28, 28, 55, 0.95);
         }
-        
+
 
         .tab-content.active {
             display: block;
@@ -120,7 +119,7 @@
         }
 
         h1:hover::after {
-            width: 80%; 
+            width: 80%;
         }
 
         p {
@@ -251,7 +250,7 @@
             padding-top: 60px;
             align-items: center;
             z-index: 1000;
-        }     
+        }
 
         .menu.active {
             display: flex;
@@ -300,9 +299,10 @@
         <p>Discord: <a target="_blank" class="highlight">nakeyan_official</a></p>
         <p class="birthday">Next birthday in <span id="birthday-countdown"></span> days</p>
         <center><p>Site by nakeyan made in HTML, CSS and JavaScript</a></center>
+        <center><div id="message"></div></center>
     </div>
 
-    <div id="ssff" class="tab-content"> 
+    <div id="ssff" class="tab-content">
         <h1>Other</h1>
         <div class="scroll-section">
         <ul>
@@ -316,10 +316,12 @@
     </div>
 
 
-    <div id="projects" class="tab-content"> 
+    <div id="projects" class="tab-content">
         <h1>Projects</h1>
         <div class="scroll-section">
         <ul>
+        <div class="separator"></div>
+        <p>EndorLauncher - Powerful launcher for minecraft, Exclusive for macOS and Linux only. <strong>More informations soon!</strong></p>
         <div class="separator"></div>
         </ul>
         </div>
@@ -334,10 +336,10 @@
 
             <h3>Languages I Speak:</h3>
             <ul>
-                <li><strong>Polish</strong> (Native)</li>
-                <li><strong>English</strong></li>
-                <li><strong>German</strong> (learning)</li>
-                <li><strong>Japanese</strong> (learning)</li>
+                <li><strong>Polish 🇵🇱 Witaj!</strong> (Native)</li>
+                <li><strong>English 🇬🇧 Hello!</strong> (B1+/B2)</li>
+                <li><strong>German 🇩🇪 Hallo!</strong> (learning A1+)</li>
+                <li><strong>Danish 🇩🇰 Hej!</strong> (learning A1)</li>
             </ul>
 
             <div class="separator"></div>
@@ -378,11 +380,11 @@
             const birthDate = new Date(birthDateString);
             const currentYear = today.getFullYear();
             birthDate.setFullYear(currentYear);
-            
+
             if (today > birthDate) {
                 birthDate.setFullYear(currentYear + 1);
             }
-            
+
             const timeDiff = birthDate - today;
             const daysUntil = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
             return daysUntil;
@@ -393,7 +395,7 @@
             document.getElementById("birthday-countdown").innerText = days;
         }
 
-        function openTab(tabName) {
+        function openTab(tabName, event) {
             const tabContent = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabContent.length; i++) {
                 tabContent[i].classList.remove("active");
@@ -404,8 +406,9 @@
             for (let i = 0; i < tabLinks.length; i++) {
                 tabLinks[i].classList.remove("active");
             }
-            event.currentTarget.classList.add("active");
+            if (event) event.currentTarget.classList.add("active");
         }
+
 
         updateBirthdayCountdown();
 
@@ -413,6 +416,23 @@
             const menu = document.querySelector('.menu');
             menu.classList.toggle('active');
         }
+
+    const messages = [
+      { text: "Love is love!", color: "#ff69b4" },
+      { text: "Equality for all!", color: "#ff4500" },
+      { text: "Be yourself, always!", color: "#32cd32" },
+      { text: "Proud and strong!", color: "#1e90ff" },
+      { text: "Celebrate diversity!", color: "#9400d3" },
+      { text: "Everyone is valid!", color: "#ff1493" },
+      { text: "Kindness is powerful!", color: "#ffa500" }
+    ];
+
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+    const messageDiv = document.getElementById("message");
+    messageDiv.textContent = randomMessage.text;
+    messageDiv.style.color = randomMessage.color;
+
 
     //  ↑ ↑ ↓ ↓ ← → ← → B A
     const konamiCode = [
