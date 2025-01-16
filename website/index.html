@@ -235,6 +235,7 @@
 
         .social-links a img:hover {
             transform: scale(1.2);
+            animation: pulse 1.5s ease-in-out infinite;
             opacity: 1;
         }
 
@@ -365,10 +366,6 @@
     </style>
 </head>
 <body>
-    <div id="loader" class="loader">
-    <div class="spinner"></div>
-    </div>
-
     <div class="social-links"></div>
         <a href="https://github.com/Nakeyan" target="_blank">
             <img src="root/img/github-icon.svg" alt="GitHub">
@@ -382,6 +379,10 @@
         <a href="mailto:gamesfrank90@gmail.com" target="_blank">
             <img src="root/img/mailto.svg" alt="MailTO">
         </a>
+    </div>
+
+    <div id="loader" class="loader">
+    <div class="spinner"></div>
     </div>
     
         <div class="hamburger" onclick="toggleMenu()">☰</div>
