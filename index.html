@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakeyan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, rgba(30,30,47,0.85) 0%, rgba(45,45,68,0.85) 100%), url('./root/img/background.jpg');
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-attachment: fixed;
+            background-position: center;
+            color: #f0f0f5;
+            font-family: 'Montserrat Alternates';
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu {
+            position: fixed;
+            top: 50px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(18, 18, 35, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu a {
+            color: #fff;
+            margin: 10px 0;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+            text-align: left;
+        }
+
+        .menu a.active, .menu a:hover {
+            color: #AD69FF;
+            animation: shake 0.5s ease-in-out;
+            animation: bounce 0.5s ease-in-out;
+        }
+
+      .hamburger {
+            display: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #fff;
+            z-index: 1001;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 40px;
+            width: 600px;
+            max-width: 90%;
+            background: rgba(28, 28, 43, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.8s ease-out;
+            margin-top: 20px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .tab-content:hover {
+            transform: scale(1.02);
+            background: rgba(28, 28, 55, 0.95);
+        }
+
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .profile {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid #AD69FF;
+            box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.5);
+            transition: transform 0.5s ease;
+            margin-bottom: 20px;
+        }
+
+        .profile:hover {
+            transform: scale(1.1) rotate(5deg);
+            animation: scaleUp 0.3s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #AD69FF;
+            margin-bottom: 10px;
+            animation: popIn 1.2s ease;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 60%;
+            height: 3px;
+            background-color: #AD69FF;
+            border-radius: 3px;
+            opacity: 0.7;
+            transition: width 0.3s ease;
+        }
+
+        h1:hover::after {
+            width: 80%;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #d9d9e3;
+        }
+
+        .highlight {
+            color: #AD69FF;
+        }
+
+        h2, h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            color: #fff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1em;
+            color: #d9d9e3;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li strong {
+            color: #AD69FF;
+        }
+
+        a {
+            color: #AD69FF;
+        }
+
+        a:hover {
+            color: #AD69FF;
+        }
+
+        a:active {
+            color: #AD69FF;
+        }
+
+
+        .separator {
+            border-top: 2.5px dashed #AD69FF;
+            margin: 20px 0;
+        }
+
+        .scroll-section {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(18, 18, 35, 0.9);
+            color: #aaa;
+            position: relative;
+            width: 100%;
+            font-size: 0.9em;
+        }
+
+        .birthday {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #d9d9e3;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .social-links a img:hover {
+            transform: scale(1.2);
+            animation: pulse 1.5s ease-in-out infinite;
+            opacity: 1;
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #AD69FF;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-content, .caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        .name-highlight {
+            color: #5cc788;
+            font-weight: bold;
+        }
+        
+        @keyframes zoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            20% { transform: translateY(-5px); }
+            40% { transform: translateY(0); }
+            60% { transform: translateY(-5px); }
+            80% { transform: translateY(0); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes scaleUp {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes pulse {
+           0% { transform: scale(1); opacity: 0.8; }
+           50% { transform: scale(1.1); opacity: 1; }
+           100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @media (max-width: 768px) {
+          .menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            background-color: rgba(18, 18, 35, 0.95);
+            padding-top: 60px;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .social-links a img:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="social-links">
+        <a href="https://github.com/Nakeyan" target="_blank">
+            <img src="root/img/github-icon.svg" alt="GitHub">
+        </a>
+        <a href="https://discord.gg/CgEjUEnRYN" target="_blank">
+            <img src="root/img/discord-icon.svg" alt="Discord">
+        </a>
+        <a href="https://steamcommunity.com/id/nakeyan-kun" target="_blank">
+            <img src="root/img/steam-icon.svg" alt="Steam">
+        </a>
+        <a href="mailto:gamesfrank90@gmail.com" target="_blank">
+            <img src="root/img/mailto.svg" alt="MailTO">
+        </a>
+    </div>
+
+    <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="caption" id="modalCaption"></div>
+    </div>
+
+
+    <div id="loader" class="loader" style="transition: opacity 0.5s; opacity: 0; display: none;">
+    <div class="spinner"></div>
+    </div>
+    
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu">
+        <center><a href="#home" class="tab-link" onclick="openTab('home')">Home</a></center>
+        <center><a href="#about" class="tab-link" onclick="openTab('about')">About</a></center>
+        <center><a href="#projects" class="tab-link" onclick="openTab('projects')">Projects</a></center>
+        <center><a href="#ssff" class="tab-link" onclick="openTab('ssff')">Other</a></center>
+    </div>
+
+    <div id="home" class="tab-content active">
+        <div class="profile-section">
+            <img class="profile" src="./root/img/pfp.jpg" alt="Profile picture">
+            <h1>Welcome, I'm <span class="name-highlight">/// Nakeyan</span></h1>
+        </div>
+        <div class="info-section">
+            <p class="intro">I'm a <strong>14-year-old programmer</strong> from Poland, passionate about <em>Gaming</em>, <em>Linux</em>, and <em>coding life</em>.</p>
+            <p class="contact">Discord: <a href="#" class="highlight">nakeyan_official</a></p>
+            <p class="birthday">Next birthday in <span id="birthday-countdown"></span> days</p>
+            <p class="message"><div id="message"></div></p>
+        </div>
+        <footer class="site-credit">
+            <p>Site crafted by <span class="name-highlight">Nakeyan</span> using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
+        </footer>
+    </div>
+    
+    <div id="ssff" class="tab-content">
+        <h1>Other</h1>
+        <div class="scroll-section">
+        <ul>
+        <div class="separator"></div>
+        <img src="root/img/YTC.png" height="178" width="268" onclick="showModal(this)">
+        <li><strong><p>Description:   If someone don't know i have a channel on YT(Polish only)</p></strong></li>
+        <li><strong><p>Added:   2025 January 17 at 14:05</p></strong></li>
+        <div class="separator"></div>
+        </ul>
+        <ul>
+        <div class="separator"></div>
+        <img src="root/img/MDOIDM.jpg" onclick="showModal(this)">
+        <li><strong><p>Description:   that's how it was, i'm not making that up</p></strong></li>
+        <li><strong><p>Added:   2024 November 11 at 18:30</p></strong></li>
+        <div class="separator"></div>
+        </ul>
+        </div>
+    </div>
+
+    <div id="projects" class="tab-content">
+        <h1>Projects</h1>
+        <div class="scroll-section">
+        <ul>
+        <div class="separator"></div>
+        <p>No projects!</p>
+        <div class="separator"></div>
+        </ul>
+        </div>
+    </div>
+
+    <div id="about" class="tab-content">
+        <h1>About me</h1>
+        <div class="scroll-section">
+            <p>Hi, I'm <span class="name-highlight">/// Nakeyan!</span> I'm a Polish gay <img src="./root/img/gaymlmemoji.png" height="32" width="32"></img> and i've been programming for about 2/3 years now. I started with HTML and later CSS and right now I'm learning C++. I also love to play video games.</p>
+            <div class="separator"></div>
+            <h3>Languages i speak</h3>
+            <ul>
+                <li><strong>Polish 🇵🇱 Witaj!</strong> (Native)</li>
+                <li><strong>English 🇬🇧 Hello!</strong> (B1+/B2)</li>
+                <li><strong>German 🇩🇪 Hallo!</strong> (learning A1+)</li>
+                <li><strong>Danish 🇩🇰 Hej!</strong> (learning A1)</li>
+            </ul>
+            <div class="separator"></div>
+            <h3>Coding Skills</h3>
+            <ul>
+                <li><strong>HTML</strong></li>
+                <li><strong>CSS</strong></li>
+                <li><strong>C++</strong> (learning)</li>
+            </ul>
+            <div class="separator"></div>
+            <h3>Type Racer:</h3>
+            <a href="https://data.typeracer.com/pit/profile?user=nakeyan&amp;ref=badge" target="_top">
+                <img src="https://data.typeracer.com/misc/badge?user=nakeyan" border="0" alt="TypeRacer.com scorecard for user nakeyan">
+            </a>
+            <p><strong><a href="https://data.typeracer.com/pit/profile?user=nakeyan">TypeRacer Profile</a></strong></p>
+        </div>
+    </div>
+
+    <script>
+        function getDaysUntilNextBirthday(birthDateString) {
+            const today = new Date();
+            const birthDate = new Date(birthDateString);
+            const currentYear = today.getFullYear();
+            birthDate.setFullYear(currentYear);
+
+            if (today > birthDate) {
+                birthDate.setFullYear(currentYear + 1);
+            }
+
+            const timeDiff = birthDate - today;
+            const daysUntil = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            return daysUntil;
+        }
+
+        function updateBirthdayCountdown() {
+            const days = getDaysUntilNextBirthday("2010-07-12");
+            document.getElementById("birthday-countdown").innerText = days;
+        }
+
+        function openTab(tabName, event) {
+            const tabContent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+
+            const tabLinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+            if (event) event.currentTarget.classList.add("active");
+        }
+
+        window.addEventListener('load', function () {
+                const loader = document.getElementById('loader');
+                loader.style.transition = "opacity 0.5s ease";
+                loader.style.opacity = 0;
+                setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+
+        updateBirthdayCountdown();
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+    const messages = [
+      { text: "Love is love!", color: "#ff69b4" },
+      { text: "Equality for all!", color: "#ff4500" },
+      { text: "Be yourself, always!", color: "#32cd32" },
+      { text: "Proud and strong!", color: "#1e90ff" },
+      { text: "Celebrate diversity!", color: "#9400d3" },
+      { text: "Everyone is valid!", color: "#ff1493" },
+      { text: "Kindness is powerful!", color: "#ffa500" },
+      { text: "You like boys don't you hehe", color: "#cb42f5" }
+    ];
+
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+    const messageDiv = document.getElementById("message");
+    messageDiv.textContent = randomMessage.text;
+    messageDiv.style.color = randomMessage.color;
+
+    function showModal(img) {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalCaption = document.getElementById("modalCaption");
+        
+        modal.style.display = "block";
+        modalImage.src = img.src;
+        modalCaption.textContent = img.alt;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    window.addEventListener('scroll', function() {
+    let offset = window.pageYOffset;
+    document.body.style.backgroundPosition = "center " + (offset * 0.5) + "px";
+    });
+
+    </script>
+
+</body></html>
