@@ -23,7 +23,7 @@ Do you wanna see my website?
 
 See it here!
 
-https://nakeyan.xyz/website/
+https://nakeyan.xyz/
 
 
 -------
