@@ -1,5 +1,5 @@
 # Hi! i'm ナケヤン-君
-I'm a Polish gay, I've been programming for about 2/3 years now. I started with HTML and later CSS, and right now I'm learning C++. I also like to play video games.
+I'm a Polish gay and demiboy! :}, I've been programming for about 2/3 years now. I started with HTML and later CSS, and right now I'm learning C++. I also like to play video games.
 
 # Programming Languages
 HTML
