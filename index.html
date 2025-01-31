@@ -4,7 +4,7 @@
     <title>Nakeyan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <style>
         * {
             transition: all 0.3s ease;
@@ -21,7 +21,7 @@
             background-attachment: fixed;
             background-position: center;
             color: #f0f0f5;
-            font-family: 'Montserrat Alternates';
+            font-family: 'Kanit';
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -42,7 +42,7 @@
             flex-direction: column;
             background-color: rgba(18, 18, 35, 0.9);
             padding: 10px;
-            border-radius: 8px;
+            border-radius: 5px; 
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
@@ -56,12 +56,12 @@
         }
 
         .menu a.active, .menu a:hover {
-            color: #AD69FF;
+            color: #FF4C4C;
             animation: shake 0.5s ease-in-out;
             animation: bounce 0.5s ease-in-out;
         }
 
-      .hamburger {
+        .hamburger {
             display: none;
             cursor: pointer;
             position: fixed;
@@ -87,30 +87,27 @@
             width: 600px;
             max-width: 90%;
             background: rgba(28, 28, 43, 0.9);
-            border-radius: 15px;
+            border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.8s ease-out;
             margin-top: 20px;
             transition: transform 0.3s ease, background 0.3s ease;
         }
 
-        .tab-content:hover {
-            transform: scale(1.02);
-            background: rgba(28, 28, 55, 0.95);
-        }
-
-
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .tab-content:hover {
+            transform: scale(1);
+            background: rgba(28, 28, 55, 0.95);
         }
 
         .profile {
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            border: 3px solid #AD69FF;
-            box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.5);
+            border: 3px solid #FF4C4C;
+            box-shadow: 0px 0px 20px #FF4C4C;
             transition: transform 0.5s ease;
             margin-bottom: 20px;
         }
@@ -122,7 +119,7 @@
 
         h1 {
             font-size: 2.2em;
-            color: #AD69FF;
+            color: #FF4C4C;
             margin-bottom: 10px;
             animation: popIn 1.2s ease;
             position: relative;
@@ -135,7 +132,7 @@
             bottom: -5px;
             width: 60%;
             height: 3px;
-            background-color: #AD69FF;
+            background-color: #FF4C4C; 
             border-radius: 3px;
             opacity: 0.7;
             transition: width 0.3s ease;
@@ -153,7 +150,7 @@
         }
 
         .highlight {
-            color: #AD69FF;
+            color: #FF4C4C; 
         }
 
         h2, h3 {
@@ -174,24 +171,23 @@
         }
 
         ul li strong {
-            color: #AD69FF;
+            color: #FF4C4C;
         }
 
         a {
-            color: #AD69FF;
+            color: #FF4C4C;
         }
 
         a:hover {
-            color: #AD69FF;
+            color: #FF4C4C;
         }
 
         a:active {
-            color: #AD69FF;
+            color: #FF4C4C;
         }
 
-
         .separator {
-            border-top: 2.5px dashed #AD69FF;
+            border-top: 2.5px dashed #FF4C4C;
             margin: 20px 0;
         }
 
@@ -235,7 +231,6 @@
 
         .social-links a img:hover {
             transform: scale(1.2);
-            animation: pulse 1.5s ease-in-out infinite;
             opacity: 1;
         }
 
@@ -254,7 +249,7 @@
 
         .spinner {
             border: 8px solid #f3f3f3;
-            border-top: 8px solid #AD69FF;
+            border-top: 8px solid #FF4C4C;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -284,101 +279,84 @@
             margin: auto;
             display: block;
             width: 80%;
-            max-width: 700px;
             text-align: center;
-            color: #ccc;
-            padding: 10px 0;
+            font-size: 1.2em;
+            color: #fff;
+            padding-top: 20px;
         }
 
         .close {
             position: absolute;
-            top: 10px;
-            right: 25px;
-            color: white;
-            font-size: 35px;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 2em;
             font-weight: bold;
+            background: none;
+            border: none;
             cursor: pointer;
-        }
-
-        .modal-content, .caption {
-            animation-name: zoom;
-            animation-duration: 0.6s;
+            z-index: 1001;
         }
 
         .name-highlight {
-            color: #5cc788;
+            color: #ff9a60;
             font-weight: bold;
-        }
-        
-        @keyframes zoom {
-            from {transform: scale(0)} 
-            to {transform: scale(1)}
-        }
-
-        @media only screen and (max-width: 700px) {
-            .modal-content {
-                width: 100%;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @keyframes popIn {
-            from {
+            0% {
+                transform: scale(0.8);
                 opacity: 0;
-                transform: scale(0.9);
             }
-            to {
-                opacity: 1;
+            100% {
                 transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
             }
         }
 
         @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
         }
 
         @keyframes bounce {
-            0% { transform: translateY(0); }
-            20% { transform: translateY(-5px); }
-            40% { transform: translateY(0); }
-            60% { transform: translateY(-5px); }
-            80% { transform: translateY(0); }
-            100% { transform: translateY(0); }
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
-        @keyframes scaleUp {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes pulse {
-           0% { transform: scale(1); opacity: 0.8; }
-           50% { transform: scale(1.1); opacity: 1; }
-           100% { transform: scale(1); opacity: 0.8; }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         @media (max-width: 768px) {
@@ -426,7 +404,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-position: center 0px;">
     <div class="social-links">
         <a href="https://github.com/Nakeyan" target="_blank">
             <img src="root/img/github-icon.svg" alt="GitHub">
@@ -442,9 +420,9 @@
         </a>
     </div>
 
-    <div id="imageModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImage">
+    <div id="imageModal" class="modal" style="display: none;">
+    <span class="close" onclick="closeModal()">×</span>
+    <img class="modal-content" id="modalImage" src="file:///C:/Users/Nakeyan/Desktop/The%20New%20Nakeyan%20Site/root/img/YTC.png">
     <div class="caption" id="modalCaption"></div>
     </div>
 
@@ -469,8 +447,8 @@
         <div class="info-section">
             <p class="intro">I'm a <strong>14-year-old programmer</strong> from Poland, passionate about <em>Gaming</em>, <em>Linux</em>, and <em>coding life</em>.</p>
             <p class="contact">Discord: <a href="#" class="highlight">nakeyan_official</a></p>
-            <p class="birthday">Next birthday in <span id="birthday-countdown"></span> days</p>
-            <p class="message"><div id="message"></div></p>
+            <p class="birthday">Next birthday in <span id="birthday-countdown">162</span> days</p>
+            <p class="message"></p><div id="message" style="color: rgb(203, 66, 245);">You like boys don't you hehe</div><p></p>
         </div>
         <footer class="site-credit">
             <p>Site crafted by <span class="name-highlight">Nakeyan</span> using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
@@ -511,14 +489,14 @@
     <div id="about" class="tab-content">
         <h1>About me</h1>
         <div class="scroll-section">
-            <p>Hi, I'm <span class="name-highlight">/// Nakeyan!</span> I'm a Polish gay and Demiboy <img src="./root/img/gaymlmanddemiboy.png" height="32" width="32" onclick="showModal(this)"></img> (any pronouns)! i've been programming for about 2/3 years now. I started with HTML and later CSS and right now I'm learning C++. I also love to play video games.</p>
+            <p>Hi, I'm <span class="name-highlight">/// Nakeyan!</span> I'm a Polish gay and Demiboy <img src="./root/img/gaymlmanddemiboy.png" height="32" width="32" onclick="showModal(this)"> (any pronouns)! i've been programming for about 2/3 years now. I started with HTML and later CSS and right now I'm learning C++. I also love to play video games.</p>
             <div class="separator"></div>
             <h3>Languages i speak</h3>
             <ul>
                 <li><strong>Polish 🇵🇱 Witaj!</strong> (Native)</li>
                 <li><strong>English 🇬🇧 Hello!</strong> (B1+/B2)</li>
                 <li><strong>German 🇩🇪 Hallo!</strong> (learning A1+)</li>
-                <li><strong>Danish 🇩🇰 Hej!</strong> (learning A1)</li>
+                <li><strong>Czech 🇨🇿 Ahoj!</strong> (learning A1)</li>
             </ul>
             <div class="separator"></div>
             <h3>Coding Skills</h3>
@@ -625,5 +603,6 @@
     });
 
     </script>
+
 
 </body></html>
