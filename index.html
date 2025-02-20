@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nakeyan</title>
@@ -7,13 +6,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <style>
         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             transition: all 0.3s ease;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+    
         body {
             background: linear-gradient(135deg, rgba(30,30,47,0.85) 0%, rgba(45,45,68,0.85) 100%), url('./root/img/background.jpg');
             background-size: cover;
@@ -21,388 +19,200 @@
             background-attachment: fixed;
             background-position: center;
             color: #f0f0f5;
-            font-family: 'Kanit';
-            margin: 0;
-            padding: 0;
+            font-family: 'Kanit', sans-serif;
             min-height: 100vh;
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
-
+    
         .menu {
             position: fixed;
-            top: 50px;
-            left: 20px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #121223;
+            padding: 10px 20px;
             display: flex;
-            flex-direction: column;
-            background-color: rgba(18, 18, 35, 0.9);
-            padding: 10px;
-            border-radius: 5px; 
+            justify-content: space-between;
+            align-items: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
         }
-
+    
         .menu a {
             color: #fff;
-            margin: 10px 0;
             text-decoration: none;
             font-size: 1.1em;
-            transition: color 0.3s ease;
-            text-align: left;
+            margin: 0 10px;
         }
-
-        .menu a.active, .menu a:hover {
+    
+        .menu a:hover, .menu a.active {
             color: #FF4C4C;
-            animation: shake 0.5s ease-in-out;
-            animation: bounce 0.5s ease-in-out;
         }
-
+    
+        .menu .logo {
+            color: #FF4C4C;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    
         .hamburger {
             display: none;
             cursor: pointer;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 2em;
+            font-size: 1.5em;
             color: #fff;
-            z-index: 1001;
         }
-
-        .content {
-            position: relative;
-            z-index: 10;
-            padding: 100px 20px;
-            text-align: center;
-            color: white;
-            font-size: 2em;
+    
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+    
+            .menu {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                display: none;
+            }
+    
+            .menu.active {
+                display: flex;
+            }
+    
+            .menu a {
+                margin: 10px 0;
+            }
+    
+            .menu .logo {
+                margin-bottom: 20px;
+            }
         }
-
+    
         .tab-content {
             display: none;
-            padding: 40px;
-            width: 600px;
-            max-width: 90%;
             background: rgba(28, 28, 43, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
-            transition: transform 0.3s ease, background 0.3s ease;
+            padding: 20px;
+            border-radius: 2px;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Ensures smooth scrolling */
+            opacity: 0;
+            transform: translateY(30px);
         }
-
+    
         .tab-content.active {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
-
-        .tab-content:hover {
-            transform: scale(1);
-            background: rgba(28, 28, 55, 0.95);
+    
+        .scroll-section {
+            max-height: 400px;
+            overflow-y: auto;
         }
-
-        .profile {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 3px solid #FF4C4C;
-            box-shadow: 0px 0px 20px #FF4C4C;
-            transition: transform 0.5s ease;
-            margin-bottom: 20px;
-        }
-
-        .profile:hover {
-            transform: scale(1.1) rotate(5deg);
-            animation: scaleUp 0.3s ease-in-out;
-        }
-
+    
         h1 {
             font-size: 2.2em;
             color: #FF4C4C;
             margin-bottom: 10px;
-            animation: popIn 1.2s ease;
-            position: relative;
         }
-
+    
         h1::after {
             content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 60%;
+            display: block;
+            width: 60px;
             height: 3px;
-            background-color: #FF4C4C; 
-            border-radius: 3px;
-            opacity: 0.7;
-            transition: width 0.3s ease;
+            background: #FF4C4C;
+            margin-top: 5px;
+            border-radius: 2px;
         }
-
-        h1:hover::after {
-            width: 80%;
+    
+        .profile {
+            width: 130px;
+            height: 130px;
+            border-radius: 2px;
+            border: 3px solid #FF4C4C;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
-
-        p {
-            font-size: 1.1em;
+    
+        .profile:hover {
+            transform: scale(1.05);
+        }
+    
+        .social-links {
+            display: flex;
+            gap: 15px;
             margin-top: 20px;
-            line-height: 1.6;
-            color: #d9d9e3;
         }
-
-        .highlight {
-            color: #FF4C4C; 
+    
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
         }
-
-        h2, h3 {
-            font-size: 1.5em;
-            margin-top: 30px;
-            color: #fff;
+    
+        .social-links a img:hover {
+            opacity: 1;
         }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            font-size: 1.1em;
-            color: #d9d9e3;
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
-        ul li strong {
-            color: #FF4C4C;
-        }
-
-        a {
-            color: #FF4C4C;
-        }
-
-        a:hover {
-            color: #FF4C4C;
-        }
-
-        a:active {
-            color: #FF4C4C;
-        }
-
+    
         .separator {
-            border-top: 2.5px dashed #FF4C4C;
+            border-top: 2px solid #FF4C4C;
             margin: 20px 0;
         }
-
-        .scroll-section {
-            max-height: 300px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
+    
         footer {
             text-align: center;
             margin-top: 20px;
             padding: 10px;
-            background-color: rgba(18, 18, 35, 0.9);
+            background: rgba(18, 18, 35, 0.9);
             color: #aaa;
-            position: relative;
             width: 100%;
             font-size: 0.9em;
         }
-
-        .birthday {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #d9d9e3;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .social-links a img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .social-links a img:hover {
-            transform: scale(1.2);
-            opacity: 1;
-        }
-
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #FF4C4C;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 2s linear infinite;
-        }
-
+    
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
         }
-
+    
         .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 2px;
         }
-
-        .caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            text-align: center;
-            font-size: 1.2em;
-            color: #fff;
-            padding-top: 20px;
-        }
-
+    
         .close {
             position: absolute;
             top: 20px;
             right: 20px;
             color: #fff;
             font-size: 2em;
-            font-weight: bold;
-            background: none;
-            border: none;
             cursor: pointer;
-            z-index: 1001;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
         }
-
-        .name-highlight {
-            color: #ff9a60;
-            font-weight: bold;
+    
+        .close:hover {
+            background: rgba(255, 76, 76, 0.8);
         }
-
-        @keyframes popIn {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes scaleUp {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.2);
-            }
-        }
-
-        @keyframes shake {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            25% {
-                transform: translateX(-10px);
-            }
-            50% {
-                transform: translateX(10px);
-            }
-            75% {
-                transform: translateX(-10px);
-            }
-        }
-
-        @keyframes bounce {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @media (max-width: 768px) {
-          .menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            flex-direction: column;
-            background-color: rgba(18, 18, 35, 0.95);
-            padding-top: 60px;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .menu.active {
-            display: flex;
-        }
-
-        .hamburger {
-            display: block;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .social-links a img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .social-links a img:hover {
-            transform: scale(1.2);
-            opacity: 1;
-        }
-        }
-    </style>
+    
+        </style>
 </head>
 <body style="background-position: center 0px;">
     <div class="social-links">
@@ -434,7 +244,7 @@
         <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="menu">
         <center><a href="#home" class="tab-link" onclick="openTab('home')">Home</a></center>
-        <center><a href="#about" class="tab-link" onclick="openTab('about')">About</a></center>
+        <center><a href="#about" onclick="openTab('about')" class="tab-link">About</a></center>
         <center><a href="#projects" class="tab-link" onclick="openTab('projects')">Projects</a></center>
         <center><a href="#ssff" class="tab-link" onclick="openTab('ssff')">Other</a></center>
     </div>
@@ -448,8 +258,8 @@
             <p class="intro">I'm a <strong>14-year-old programmer</strong> from Poland, passionate about <em>Gaming</em>, <em>Linux</em>, and <em>coding life</em>.</p>
             <p class="contact">Discord: <a class="highlight">nakeyan_official</a></p>
             <p class="contact">Minecraft Server: <a href="https://dc.kosmosmc.pl/" class="highlight">kosmosmc.pl</a></p>
-            <p class="birthday">Next birthday in <span id="birthday-countdown">162</span> days</p>
-            <p class="message"></p><div id="message" style="color: rgb(203, 66, 245);">You like boys don't you hehe</div><p></p>
+            <p class="birthday">Next birthday in <span id="birthday-countdown">144</span> days</p>
+            <p class="message"></p><div id="message" style="color: #ff69b4;">Love is love!</div><p></p>
         </div>
         <footer class="site-credit">
             <p>Site crafted by <span class="name-highlight">Nakeyan</span> using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
@@ -496,15 +306,13 @@
             <ul>
                 <li><strong>Polish 🇵🇱 Witaj!</strong> (Native)</li>
                 <li><strong>English 🇬🇧 Hello!</strong> (B1+/B2)</li>
-                <li><strong>German 🇩🇪 Hallo!</strong> (learning A1+)</li>
-                <li><strong>Czech 🇨🇿 Ahoj!</strong> (learning A1)</li>
             </ul>
             <div class="separator"></div>
             <h3>Coding Skills</h3>
             <ul>
                 <li><strong>HTML</strong></li>
                 <li><strong>CSS</strong></li>
-                <li><strong>C++</strong> (learning)</li>
+                <li><strong>C++</strong> (Still learning)</li>
             </ul>
             <div class="separator"></div>
             <h3>Type Racer:</h3>
@@ -551,14 +359,13 @@
         }
 
         window.addEventListener('load', function () {
-                const loader = document.getElementById('loader');
-                loader.style.transition = "opacity 0.5s ease";
-                loader.style.opacity = 0;
-                setTimeout(() => {
+            const loader = document.getElementById('loader');
+            loader.style.transition = "opacity 0.5s ease";
+            loader.style.opacity = 0;
+            setTimeout(() => {
                 loader.style.display = 'none';
             }, 500);
         });
-
 
         updateBirthdayCountdown();
 
@@ -599,11 +406,12 @@
     }
 
     window.addEventListener('scroll', function() {
-    let offset = window.pageYOffset;
-    document.body.style.backgroundPosition = "center " + (offset * 0.5) + "px";
-    });
+            let offset = window.pageYOffset;
+            document.body.style.backgroundPosition = "center " + (offset * 0.5) + "px";
+        });
 
     </script>
+
 
 
 </body></html>
