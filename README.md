@@ -11,11 +11,7 @@ C++ (LEARNING)
 
 Polish(C2+)
 
-English(A2/B1)
-
-German(A1/A2) (Learning) 
-
-Japanese(A1) (Learning)
+English(B1+/B2)
 
 -------
 
@@ -28,7 +24,7 @@ https://nakeyan.xyz/
 
 -------
 
-[![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,python,linux,fedora)](https://skillicons.dev)
+[![Programming Lang. and others](https://skillicons.dev/icons?i=html,css,c++,linux,archlinux)](https://skillicons.dev)
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Nakeyan)](https://github.com/anuraghazra/github-readme-stats)
 
